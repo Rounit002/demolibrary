@@ -34,7 +34,7 @@ app.use(cors({
   origin: function (origin, callback) {
     const allowedOrigins = [
       'http://localhost:8080',
-      'https://archanalibrary.onrender.com',
+      'https://demolibrary-4q24.onrender.com',
       'file://'
     ];
     if (!origin || allowedOrigins.includes(origin)) {

@@ -98,9 +98,9 @@ interface DashboardStats {
 }
 
 const API_URL = window.cordova
-  ? 'https://archanalibrary.onrender.com/api'
+  ? 'https://demolibrary-4q24.onrender.com/api'
   : process.env.NODE_ENV === 'production'
-    ? 'https://archanalibrary.onrender.com/api'
+    ? 'https://demolibrary-4q24.onrender.com/api'
     : 'http://localhost:3000/api';
 
 const apiClient = axios.create({

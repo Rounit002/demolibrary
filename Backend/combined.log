@@ -2258,3 +2258,19 @@
 {"level":"info","message":"Session table checked/initialized successfully","timestamp":"2025-05-31T13:56:56.332Z"}
 {"level":"info","message":"Admin user(s) already exist, skipping default admin creation.","timestamp":"2025-05-31T13:56:56.344Z"}
 {"level":"info","message":"Server running on port 3000","timestamp":"2025-05-31T13:56:56.394Z"}
+{"level":"info","message":"Session table checked/initialized successfully","timestamp":"2025-06-01T09:55:28.502Z"}
+{"level":"info","message":"Admin user(s) already exist, skipping default admin creation.","timestamp":"2025-06-01T09:55:28.525Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-06-01T09:55:28.635Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-06-01T09:55:28.643Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-06-01T10:17:30.804Z"}
+{"level":"info","message":"Session table checked/initialized successfully","timestamp":"2025-06-01T10:17:30.825Z"}
+{"level":"info","message":"Admin user(s) already exist, skipping default admin creation.","timestamp":"2025-06-01T10:17:30.833Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-06-01T10:17:30.863Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-06-01T10:18:54.837Z"}
+{"level":"info","message":"Session table checked/initialized successfully","timestamp":"2025-06-01T10:18:54.851Z"}
+{"level":"info","message":"Admin user(s) already exist, skipping default admin creation.","timestamp":"2025-06-01T10:18:54.859Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-06-01T10:18:54.887Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-06-01T10:18:58.255Z"}
+{"level":"info","message":"Session table checked/initialized successfully","timestamp":"2025-06-01T10:18:58.369Z"}
+{"level":"info","message":"Admin user(s) already exist, skipping default admin creation.","timestamp":"2025-06-01T10:18:58.379Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-06-01T10:18:58.410Z"}
