@@ -38,3 +38,22 @@
 {"level":"info","message":"Session table checked/initialized successfully","timestamp":"2025-06-07T17:48:19.465Z"}
 {"level":"info","message":"Admin user(s) already exist, skipping default admin creation.","timestamp":"2025-06-07T17:48:19.479Z"}
 {"level":"info","message":"Server running on port 3000","timestamp":"2025-06-07T17:48:19.510Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-06-07T17:48:24.718Z"}
+{"level":"info","message":"Session table checked/initialized successfully","timestamp":"2025-06-07T17:48:24.741Z"}
+{"level":"info","message":"Admin user(s) already exist, skipping default admin creation.","timestamp":"2025-06-07T17:48:24.749Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-06-07T17:48:24.778Z"}
+{"level":"warn","message":"HTTPS credentials not found, falling back to HTTP:","timestamp":"2025-06-07T17:51:48.577Z"}
+{"level":"info","message":"Session table checked/initialized successfully","timestamp":"2025-06-07T17:51:48.663Z"}
+{"level":"info","message":"Admin user(s) already exist, skipping default admin creation.","timestamp":"2025-06-07T17:51:48.673Z"}
+{"level":"info","message":"Server running on http://0.0.0.0:3000","timestamp":"2025-06-07T17:51:48.705Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-06-07T17:51:48.737Z"}
+{"level":"warn","message":"HTTPS credentials not found, falling back to HTTP:","timestamp":"2025-06-07T17:54:10.214Z"}
+{"level":"info","message":"Session table checked/initialized successfully","timestamp":"2025-06-07T17:54:10.294Z"}
+{"level":"info","message":"Admin user(s) already exist, skipping default admin creation.","timestamp":"2025-06-07T17:54:10.303Z"}
+{"level":"info","message":"Server running on http://0.0.0.0:3000","timestamp":"2025-06-07T17:54:10.339Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-06-07T17:54:10.375Z"}
+{"level":"warn","message":"HTTPS credentials not found, falling back to HTTP:","timestamp":"2025-06-07T17:54:13.501Z"}
+{"level":"info","message":"Database connected successfully","timestamp":"2025-06-07T17:54:13.564Z"}
+{"level":"info","message":"Session table checked/initialized successfully","timestamp":"2025-06-07T17:54:13.681Z"}
+{"level":"info","message":"Admin user(s) already exist, skipping default admin creation.","timestamp":"2025-06-07T17:54:13.689Z"}
+{"level":"info","message":"Server running on http://0.0.0.0:3000","timestamp":"2025-06-07T17:54:13.717Z"}
