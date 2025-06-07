@@ -32,16 +32,26 @@ if (process.env.NODE_ENV !== 'production') {
 
 app.use(cors({
   origin: function (origin, callback) {
+    // Log the origin for debugging purposes
+    console.log(`CORS check: Request from origin -> ${origin}`);
+
     const allowedOrigins = [
-      'http://localhost',
-      'https://localhost',
-      'https://demolibrary-4q24.onrender.com',
-      'file://'
+      'https://demolibrary-4g24.onrender.com', // Production Frontend
+      'https://localhost',                     // Secure Localhost (if you set it up)
+      'http://localhost:3000',                 // A possible local dev server port
+      'http://localhost:5173',                 // Default Vite port
+      'http://localhost:8100',                 // Default Ionic/Cordova serve port
+      'file://',                               // For mobile apps
     ];
-    if (!origin || allowedOrigins.some(allowed => origin.startsWith(allowed))) {
+
+    // Allow requests with no origin (like mobile apps or curl requests)
+    if (!origin) return callback(null, true);
+
+    if (allowedOrigins.indexOf(origin) !== -1) {
       callback(null, true);
     } else {
-      callback(new Error('Not allowed by CORS'), false);
+      logger.error(`CORS Error: Origin ${origin} not allowed.`);
+      callback(new Error('Not allowed by CORS'));
     }
   },
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
