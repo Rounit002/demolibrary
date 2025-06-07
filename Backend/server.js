@@ -33,11 +33,12 @@ if (process.env.NODE_ENV !== 'production') {
 app.use(cors({
   origin: function (origin, callback) {
     const allowedOrigins = [
-      'http://localhost:8080',
+      'http://localhost',
+      'https://localhost',
       'https://demolibrary-4q24.onrender.com',
       'file://'
     ];
-    if (!origin || allowedOrigins.includes(origin)) {
+    if (!origin || allowedOrigins.some(allowed => origin.startsWith(allowed))) {
       callback(null, true);
     } else {
       callback(new Error('Not allowed by CORS'), false);

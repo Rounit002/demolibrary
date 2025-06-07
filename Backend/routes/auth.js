@@ -110,17 +110,22 @@ const authRouter = (pool, bcrypt) => {
   });
 
   router.get('/status', (req, res) => {
-    if (req.session && req.session.user) {
-      return res.json({
-        isAuthenticated: true,
-        user: {
-          id: req.session.user.id,
-          username: req.session.user.username,
-          role: req.session.user.role
-        }
-      });
+    try {
+      if (req.session && req.session.user) {
+        return res.json({
+          isAuthenticated: true,
+          user: {
+            id: req.session.user.id,
+            username: req.session.user.username,
+            role: req.session.user.role
+          }
+        });
+      }
+      return res.json({ isAuthenticated: false, user: null });
+    } catch (error) {
+      console.error('[AUTH.JS] Error in /api/auth/status:', error);
+      return res.status(500).json({ message: 'Internal Server Error' });
     }
-    return res.json({ isAuthenticated: false, user: null });
   });
 
   return router;
