@@ -12,8 +12,8 @@ const multer = require('multer');
 const winston = require('winston');
 require('dotenv').config();
 
-const { setupCronJobs } = require('./utils/cronJobs'); 
-const { sendExpirationReminder } = require('./utils/email'); 
+const { setupCronJobs } = require('./utils/cronJobs');
+const { sendExpirationReminder } = require('./utils/email');
 
 const app = express();
 
@@ -30,6 +30,7 @@ if (process.env.NODE_ENV !== 'production') {
   logger.add(new winston.transports.Console({ format: winston.format.simple() }));
 }
 
+// === RECOMMENDED CHANGE HERE ===
 app.use(cors({
   origin: function (origin, callback) {
     const allowedOrigins = [
@@ -39,7 +40,8 @@ app.use(cors({
       'https://demolibrary-4q24.onrender.com',
       'file://'
     ];
-    if (!origin || allowedOrigins.some(allowed => origin.startsWith(allowed))) {
+    // Use .includes() for an exact match, which is more secure.
+    if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
       callback(new Error('Not allowed by CORS'), false);
@@ -48,6 +50,7 @@ app.use(cors({
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
 }));
+// === END OF CHANGE ===
 
 const pool = new Pool({
   user: process.env.DB_USER,
@@ -119,10 +122,10 @@ app.post('/api/upload-image', upload.single('image'), async (req, res) => {
   }
 });
 
-const authExports = require('./routes/auth'); 
+const authExports = require('./routes/auth');
 const authRouterFactory = authExports.authRouter;
-const authenticateUser = authExports.authenticateUser; 
-const checkAdmin = authExports.checkAdmin; 
+const authenticateUser = authExports.authenticateUser;
+const checkAdmin = authExports.checkAdmin;
 const checkAdminOrStaff = authExports.checkAdminOrStaff;
 
 if (typeof authenticateUser !== 'function') {
@@ -256,7 +259,7 @@ async function initializeSessionTable() {
         "expire" timestamp(6) NOT NULL
       ) WITH (OIDS=FALSE);`);
     const pkeyCheck = await pool.query(`
-      SELECT conname FROM pg_constraint 
+      SELECT conname FROM pg_constraint
       WHERE conrelid = 'session'::regclass AND conrelid::oid IN (
         SELECT oid FROM pg_class WHERE relname = 'session' AND relnamespace = (SELECT oid FROM pg_namespace WHERE nspname = 'public')
       ) AND contype = 'p';
@@ -268,7 +271,7 @@ async function initializeSessionTable() {
     logger.info('Session table checked/initialized successfully');
   } catch (err) {
     logger.error('Error initializing session table:', err.stack);
-    if (err.code !== '42P07' && err.code !== '42710') { 
+    if (err.code !== '42P07' && err.code !== '42710') {
         // process.exit(1); // Consider if this should halt server startup
     } else {
       logger.warn(`Session table or its constraints/indexes might already exist: ${err.message}`);
@@ -280,7 +283,7 @@ async function createDefaultAdmin() {
   try {
     const usersTableExists = await pool.query(`
       SELECT EXISTS (
-        SELECT FROM information_schema.tables 
+        SELECT FROM information_schema.tables
         WHERE  table_schema = 'public'
         AND    table_name   = 'users'
       );
