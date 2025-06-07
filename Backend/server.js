@@ -35,10 +35,12 @@ if (process.env.NODE_ENV !== 'production') {
 app.use(cors({
   origin: function (origin, callback) {
     const allowedOrigins = [
-      'http://localhost:3000', // Explicitly allow the server port
-      'https://localhost:3000', // Allow HTTPS for local dev
-      'http://localhost:5173', // Common frontend dev port (e.g., Vite)
+      'http://localhost:3000',
+      'https://localhost:3000',
+      'http://localhost:5173',
       'https://demolibrary-4q24.onrender.com',
+      'capacitor://localhost',
+      'http://localhost',
       'file://'
     ];
     if (!origin || allowedOrigins.includes(origin)) {
